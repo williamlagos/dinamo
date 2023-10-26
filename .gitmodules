@@ -1,6 +1,6 @@
 [submodule "elements"]
-	path = elements
+	path = cross/elements
 	url = git@github.com:williamlagos/elements
 [submodule "cocos2d"]
-	path = cocos2d
+	path = cross/cocos2d
 	url = git@github.com:cocos2d/cocos2d-x.git
