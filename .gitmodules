@@ -7,3 +7,6 @@
 [submodule "web"]
 	path = web
 	url = git@github.com:williamlagos/dinamo-web.git
+[submodule "apple"]
+	path = apple
+	url = git@github.com:williamlagos/dinamo-apple.git
