@@ -4,3 +4,6 @@
 [submodule "cocos2d"]
 	path = cross/cocos2d
 	url = git@github.com:cocos2d/cocos2d-x.git
+[submodule "web"]
+	path = web
+	url = git@github.com:williamlagos/dinamo-web.git
