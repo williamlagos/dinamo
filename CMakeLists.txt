@@ -58,21 +58,15 @@ endif()
 list(APPEND GAME_SOURCE
      Classes/AppDelegate.cpp
      Classes/HelloWorldScene.cpp
-     elements/src/audio.cc
      elements/src/elements.cc
-     elements/src/graphics.cc
-     elements/src/physics.cc
      elements/src/ranking.cc
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
      Classes/HelloWorldScene.h
-     elements/include/audio.h
      elements/include/elements.h
-     elements/include/graphics.h
-     elements/include/physics.h
      elements/include/ranking.h
-     elements/vendor/tree.h
+     elements/vendor/tree.hh
      )
 
 include_directories(elements/include elements/vendor)
