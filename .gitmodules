@@ -1,6 +1,8 @@
 [submodule "web"]
 	path = web
+	branch = master
 	url = git@github.com:williamlagos/dinamo-web.git
 [submodule "apple"]
 	path = apple
+	branch = master
 	url = git@github.com:williamlagos/dinamo-apple.git
