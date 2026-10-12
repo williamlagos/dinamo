@@ -1,8 +1,9 @@
 # Dinamo
 
-An arcade space shooter tribute to the iconic 1980s classic **Galaga**, engineered across two ecosystems: **Native Apple** (SpriteKit) and **Modern Web** (PixiJS).
+An arcade space shooter tribute to the iconic 1980s classic **Galaga**, engineered across three ecosystems: **Analogue Pocket / Game Boy** (GB Studio), **Native Apple** (SpriteKit), and **Modern Web** (PixiJS).
 
 ![Arcade](https://img.shields.io/badge/Genre-Arcade%20Shoot%20'Em%20Up-red)
+![Analogue Pocket](https://img.shields.io/badge/Analogue%20Pocket-GB%20Studio-blue)
 ![Apple](https://img.shields.io/badge/Apple-macOS%20%7C%20iOS%20%7C%20tvOS-black)
 ![Web](https://img.shields.io/badge/Web-PixiJS%20%2B%20Vite-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -11,12 +12,13 @@ An arcade space shooter tribute to the iconic 1980s classic **Galaga**, engineer
 
 ## Overview
 
-Dinamo recreates the quintessential retro arcade experience of Namco's 1981 classic *Galaga*. This repository acts as the umbrella project linking two specialized submodule implementations:
+Dinamo recreates the quintessential retro arcade experience of Namco's 1981 classic *Galaga*:
 
-1. **[Apple (`apple/`)](https://github.com/williamlagos/dinamo-apple):** Native Swift + SpriteKit multiplatform project targeting macOS, iOS, and tvOS.
-2. **[Web (`web/`)](https://github.com/williamlagos/dinamo-web):** High-performance TypeScript + PixiJS 7 web game bundled with Vite.
+1. **Analogue Pocket & Game Boy (`dinamo.gbsproj`, `project/`):** Official 8-bit cartridge edition built with GB Studio 4.1. Compiles directly to `.pocket` and `.gb` ROMs.
+2. **[Apple (`apple/`)](https://github.com/williamlagos/dinamo-apple):** Native Swift + SpriteKit multiplatform project targeting macOS, iOS, and tvOS.
+3. **[Web (`web/`)](https://github.com/williamlagos/dinamo-web):** High-performance TypeScript + PixiJS 7 web game bundled with Vite.
 
-Both platforms share the same core arcade mechanics, procedural pixel art designs, 8-bit audio synthesis, and cubic Bézier flight curves.
+All platforms share the same core arcade mechanics, pixel art designs, 8-bit audio, and attack curve choreography.
 
 ---
 
