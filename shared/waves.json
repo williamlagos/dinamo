@@ -1,0 +1,79 @@
+{
+  "stage": 1,
+  "formation": {
+    "cols": 10,
+    "rows": 4,
+    "colSpacing": 36,
+    "rowSpacing": 28,
+    "slots": [
+      { "row": 0, "col": 3, "type": "boss", "health": 2, "points": 150, "divePoints": 400 },
+      { "row": 0, "col": 4, "type": "boss", "health": 2, "points": 150, "divePoints": 400 },
+      { "row": 0, "col": 5, "type": "boss", "health": 2, "points": 150, "divePoints": 400 },
+      { "row": 0, "col": 6, "type": "boss", "health": 2, "points": 150, "divePoints": 400 },
+
+      { "row": 1, "col": 1, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+      { "row": 1, "col": 2, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+      { "row": 1, "col": 3, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+      { "row": 1, "col": 4, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+      { "row": 1, "col": 5, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+      { "row": 1, "col": 6, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+      { "row": 1, "col": 7, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+      { "row": 1, "col": 8, "type": "butterfly", "health": 1, "points": 80, "divePoints": 160 },
+
+      { "row": 2, "col": 1, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 2, "col": 2, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 2, "col": 3, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 2, "col": 4, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 2, "col": 5, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 2, "col": 6, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 2, "col": 7, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 2, "col": 8, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+
+      { "row": 3, "col": 0, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 1, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 2, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 3, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 4, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 5, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 6, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 7, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 8, "type": "bee", "health": 1, "points": 50, "divePoints": 100 },
+      { "row": 3, "col": 9, "type": "bee", "health": 1, "points": 50, "divePoints": 100 }
+    ]
+  },
+  "subwaves": [
+    { "type": "boss", "row": 0, "col": 4, "path": "topLeft", "delay": 0.15 },
+    { "type": "boss", "row": 0, "col": 5, "path": "topRight", "delay": 0.35 },
+    { "type": "boss", "row": 0, "col": 3, "path": "topLeft", "delay": 0.55 },
+    { "type": "boss", "row": 0, "col": 6, "path": "topRight", "delay": 0.75 },
+    { "type": "butterfly", "row": 1, "col": 4, "path": "topLeft", "delay": 0.95 },
+    { "type": "butterfly", "row": 1, "col": 5, "path": "topRight", "delay": 1.15 },
+    { "type": "butterfly", "row": 1, "col": 3, "path": "topLeft", "delay": 1.35 },
+    { "type": "butterfly", "row": 1, "col": 6, "path": "topRight", "delay": 1.55 },
+
+    { "type": "butterfly", "row": 1, "col": 1, "path": "leftSide", "delay": 1.85 },
+    { "type": "butterfly", "row": 1, "col": 8, "path": "rightSide", "delay": 2.05 },
+    { "type": "butterfly", "row": 1, "col": 2, "path": "leftSide", "delay": 2.25 },
+    { "type": "butterfly", "row": 1, "col": 7, "path": "rightSide", "delay": 2.45 },
+    { "type": "bee", "row": 2, "col": 4, "path": "leftSide", "delay": 2.65 },
+    { "type": "bee", "row": 2, "col": 5, "path": "rightSide", "delay": 2.85 },
+    { "type": "bee", "row": 2, "col": 3, "path": "leftSide", "delay": 3.05 },
+    { "type": "bee", "row": 2, "col": 6, "path": "rightSide", "delay": 3.25 },
+
+    { "type": "bee", "row": 2, "col": 1, "path": "topLeft", "delay": 3.55 },
+    { "type": "bee", "row": 2, "col": 8, "path": "topRight", "delay": 3.75 },
+    { "type": "bee", "row": 2, "col": 2, "path": "topLeft", "delay": 3.95 },
+    { "type": "bee", "row": 2, "col": 7, "path": "topRight", "delay": 4.15 },
+    { "type": "bee", "row": 3, "col": 4, "path": "topLeft", "delay": 4.35 },
+    { "type": "bee", "row": 3, "col": 5, "path": "topRight", "delay": 4.55 },
+    { "type": "bee", "row": 3, "col": 3, "path": "topLeft", "delay": 4.75 },
+    { "type": "bee", "row": 3, "col": 6, "path": "topRight", "delay": 4.95 },
+
+    { "type": "bee", "row": 3, "col": 0, "path": "leftSide", "delay": 5.25 },
+    { "type": "bee", "row": 3, "col": 9, "path": "rightSide", "delay": 5.45 },
+    { "type": "bee", "row": 3, "col": 1, "path": "leftSide", "delay": 5.65 },
+    { "type": "bee", "row": 3, "col": 8, "path": "rightSide", "delay": 5.85 },
+    { "type": "bee", "row": 3, "col": 2, "path": "leftSide", "delay": 6.05 },
+    { "type": "bee", "row": 3, "col": 7, "path": "rightSide", "delay": 6.25 }
+  ]
+}
