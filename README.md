@@ -14,7 +14,7 @@ An arcade space shooter tribute to the iconic 1980s classic **Galaga**, engineer
 
 Dinamo recreates the quintessential retro arcade experience of Namco's 1981 classic *Galaga*:
 
-1. **Analogue Pocket & Game Boy (`dinamo.gbsproj`, `project/`):** Official 8-bit cartridge edition built with GB Studio 4.1. Compiles directly to `.pocket` and `.gb` ROMs.
+1. **Analogue Pocket & Game Boy (`gbgame/`):** Complete 8-bit project editable in GB Studio 4.1 (`GBGame.gbsproj`). Features the space battle SHMUP and compiles directly to `.pocket` and `.gb` ROMs.
 2. **[Apple (`apple/`)](https://github.com/williamlagos/dinamo-apple):** Native Swift + SpriteKit multiplatform project targeting macOS, iOS, and tvOS.
 3. **[Web (`web/`)](https://github.com/williamlagos/dinamo-web):** High-performance TypeScript + PixiJS 7 web game bundled with Vite.
 
@@ -44,9 +44,13 @@ All platforms share the same core arcade mechanics, pixel art designs, 8-bit aud
 dinamo/
  ├── apple/    # Submodule: Dinamo for Apple Platforms (SpriteKit, Swift)
  │              └── Dinamo/ (macOS, iOS, tvOS targets)
- └── web/      # Submodule: Dinamo for Web (PixiJS, TypeScript, Vite)
-                ├── src/ (audio, textures, paths, game engine, main)
-                └── dist/ (production build)
+ ├── web/      # Submodule: Dinamo for Web (PixiJS, TypeScript, Vite)
+ │              ├── src/ (audio, textures, paths, game engine, main)
+ │              └── dist/ (production build)
+ ├── gbgame/   # GB Studio 4.1 Game Boy & Analogue Pocket Project (GBGame.gbsproj)
+ │              ├── assets/ (sprites, backgrounds, music, sounds)
+ │              └── project/ (scenes including space/space_battle, scripts)
+ └── shared/   # Shared Arcade wave & formation specifications (waves.json)
 ```
 
 ---
@@ -91,3 +95,16 @@ Select any target (`Dinamo macOS`, `Dinamo iOS`, or `Dinamo tvOS`) in Xcode and 
   - macOS: Arrow keys / `A`/`D`, `Spacebar` / `Return` to fire, or mouse drag/click.
   - iOS: Touch and drag across screen, tap to fire.
   - tvOS: Siri Remote touchpad / clicks, or connected Bluetooth Game Controllers (Xbox / PlayStation / MFi).
+
+---
+
+### 4. Editing the Game Boy / Analogue Pocket Version (GB Studio)
+Open the project file in GB Studio 4.1+:
+```bash
+open gbgame/GBGame.gbsproj
+```
+From GB Studio, you can:
+- Visually edit the **Space Battle** SHMUP scene (`scenes/space/space_battle`), actor AI, and projectile behaviors.
+- Export as a Game Boy ROM (`.gb` / `.gbc`) for real hardware and RetroArch.
+- Export as an Analogue Pocket file (`.pocket`) to run natively on the Analogue Pocket.
+- Export to Web (`build/web`) to deliver into the `dinamo-web` arcade cabinet.
