@@ -31,7 +31,10 @@
       "command": "EVENT_ACTOR_SET_DIRECTION",
       "args": {
         "actorId": "player",
-        "direction": "up"
+        "direction": {
+          "type": "direction",
+          "value": "up"
+        }
       }
     },
     {
