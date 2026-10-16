@@ -5,7 +5,7 @@
   "symbol": "sprite_enemy_ship",
   "numFrames": 4,
   "filename": "enemy_ship.png",
-  "checksum": "5ca3edf07271d35f48c4d5c6a795ad81d08b479f",
+  "checksum": "138fa173b6f69c599c3faa34113952033da17dd1",
   "width": 64,
   "height": 32,
   "states": [

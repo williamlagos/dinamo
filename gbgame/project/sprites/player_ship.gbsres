@@ -5,7 +5,7 @@
   "symbol": "sprite_player_ship",
   "numFrames": 6,
   "filename": "player_ship.png",
-  "checksum": "29459697b548d556d45bb427c413f48d7b14f7b1",
+  "checksum": "0f26fc41519867c35567ce07c5bb1aaf65caa6d6",
   "width": 96,
   "height": 16,
   "states": [

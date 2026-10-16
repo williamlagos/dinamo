@@ -14,7 +14,7 @@ An arcade space shooter tribute to the iconic 1980s classic **Galaga**, engineer
 
 Dinamo recreates the quintessential retro arcade experience of Namco's 1981 classic *Galaga*:
 
-1. **Analogue Pocket & Game Boy (`gbgame/`):** Complete 8-bit project editable in GB Studio 4.1 (`GBGame.gbsproj`). Features the space battle SHMUP and compiles directly to `.pocket` and `.gb` ROMs.
+1. **Analogue Pocket & Game Boy (`gbgame/`):** Complete 8-bit retro Galaga arcade game editable in GB Studio 4.1 (`GBGame.gbsproj`). Features a dedicated 160×144 fixed-screen space battle with a 10-ship alien armada, formation swaying, dive-bombing attacks, vertical laser fire, and chiptune audio, compiling directly to `.pocket` and `.gb` ROMs.
 2. **[Apple (`apple/`)](https://github.com/williamlagos/dinamo-apple):** Native Swift + SpriteKit multiplatform project targeting macOS, iOS, and tvOS.
 3. **[Web (`web/`)](https://github.com/williamlagos/dinamo-web):** High-performance TypeScript + PixiJS 7 web game bundled with Vite.
 

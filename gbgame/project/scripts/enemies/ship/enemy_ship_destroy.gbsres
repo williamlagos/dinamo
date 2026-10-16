@@ -3,7 +3,7 @@
   "id": "2fe3aa9b-1ada-4d85-91f0-b1f4f9dcc910",
   "name": "enemies/ship/Enemy Ship Destroy",
   "symbol": "script_enemy_ship_destroy",
-  "description": "Play enemy explosion animation and play sound effect",
+  "description": "Play enemy explosion animation, play sound effect, increment score and decrement enemy counter",
   "variables": {},
   "actors": {
     "0": {
@@ -33,23 +33,37 @@
         "type": "crash",
         "pitch": 4,
         "frequency": 200,
-        "duration": 0.5,
+        "duration": 0.4,
         "wait": false
       }
     },
     {
+      "id": "d42ecb5b-8088-4156-b203-a45bf85137ee",
       "command": "EVENT_ACTOR_SET_STATE",
       "args": {
         "actorId": "0",
         "spriteStateId": "Explode"
-      },
-      "id": "d42ecb5b-8088-4156-b203-a45bf85137ee"
+      }
+    },
+    {
+      "id": "78491023-1498-4cda-9213-912a74c01289",
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "18"
+      }
+    },
+    {
+      "id": "19402847-9201-4198-8421-482019482019",
+      "command": "EVENT_DEC_VALUE",
+      "args": {
+        "variable": "20"
+      }
     },
     {
       "id": "4aec2ab7-1a8f-4b54-b4fc-7cb4fded05de",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.5
+        "time": 0.3
       }
     },
     {

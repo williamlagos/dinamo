@@ -2,14 +2,14 @@
   "_resourceType": "scene",
   "id": "6bcc8670-b44d-4892-a37a-77a35f5a7668",
   "_index": 8,
-  "type": "SHMUP",
+  "type": "TOPDOWN",
   "name": "space/Space Battle",
   "symbol": "scene_space_battle",
   "x": 144,
   "y": 724,
-  "width": 255,
+  "width": 20,
   "height": 18,
-  "backgroundId": "28a8b376-b6c5-4e6d-8d7d-2a409d73cd1b",
+  "backgroundId": "40c0fd6d-9ebe-4a6e-8baf-2c478ec9c919",
   "tilesetId": "",
   "paletteIds": [
     "d73adccf-4071-4012-b0a6-9c3973a2dc0e",
@@ -19,78 +19,84 @@
   "autoFadeSpeed": 1,
   "script": [
     {
-      "id": "349d17cf-18f1-42be-acc2-e76c9441d1ce",
-      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "id": "e8120349-1928-4cba-9213-912a74c01280",
+      "command": "EVENT_ACTOR_SET_SPRITE",
       "args": {
-        "customEventId": "a02c8ee7-1478-4317-80d7-1c3fc9704e8d",
-        "__name": "Init Weapons"
-      },
-      "children": {
-        "script": [
-          {
-            "id": "72f90b54-19db-4794-9cdd-e89647b95af0",
-            "command": "EVENT_SET_INPUT_SCRIPT",
-            "args": {
-              "input": [
-                "a"
-              ]
-            },
-            "children": {
-              "true": [
-                {
-                  "id": "b5d82058-ed83-492e-ad43-a011d637d9e2",
-                  "command": "EVENT_LAUNCH_PROJECTILE",
-                  "args": {
-                    "spriteSheetId": "450a3571-cc76-41be-8c95-818d60b83c59",
-                    "actorId": "player",
-                    "direction": "right",
-                    "speed": 3,
-                    "collisionGroup": "1",
-                    "collisionMask": [
-                      "1"
-                    ],
-                    "__collapse": false,
-                    "animSpeed": 7,
-                    "lifeTime": 1.2,
-                    "directionType": "direction",
-                    "angleVariable": "0",
-                    "angle": 0,
-                    "otherActorId": "$self$",
-                    "loopAnim": true,
-                    "destroyOnHit": true
-                  }
-                }
-              ]
-            },
-            "__type": "event"
-          }
-        ]
+        "actorId": "player",
+        "spriteSheetId": "2f2d492c-dba2-434c-93c9-d1301e88d5e9"
+      }
+    },
+    {
+      "id": "9f102847-1920-4198-8421-482019482010",
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": "up"
+      }
+    },
+    {
+      "id": "81203948-2910-4821-9842-192840192841",
+      "command": "EVENT_ACTOR_SET_POSITION",
+      "args": {
+        "actorId": "player",
+        "x": {
+          "type": "number",
+          "value": 9
+        },
+        "y": {
+          "type": "number",
+          "value": 16
+        }
       }
     },
     {
       "id": "ffbc81cc-7fd2-4b40-a1c7-98759a5f4565",
       "command": "EVENT_ACTOR_SET_MOVEMENT_SPEED",
       "args": {
-        "actorId": "$self$",
-        "speed": 0.5,
+        "actorId": "player",
+        "speed": 1.5,
         "__collapse": false
       }
     },
     {
-      "id": "9fdf6184-f7fa-4b3f-9889-2476c138462a",
-      "command": "EVENT_ACTOR_MOVE_RELATIVE",
+      "id": "349d17cf-18f1-42be-acc2-e76c9441d1ce",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "actorId": "$self$",
-        "x": {
-          "type": "number",
-          "value": 4
-        },
-        "y": {
+        "customEventId": "a02c8ee7-1478-4317-80d7-1c3fc9704e8d",
+        "__name": "Init Weapons"
+      }
+    },
+    {
+      "id": "78491023-1498-4cda-9213-912a74c01289",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "18",
+        "value": {
           "type": "number",
           "value": 0
-        },
-        "moveType": "horizontal",
-        "useCollisions": false
+        }
+      }
+    },
+    {
+      "id": "89102948-1920-4812-b841-891029481920",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "19",
+        "value": {
+          "type": "number",
+          "value": 1
+        }
+      }
+    },
+    {
+      "id": "90192841-1920-4812-a841-901928419019",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 10
+        }
       }
     },
     {
@@ -99,15 +105,6 @@
       "args": {
         "musicId": "a7c68b7f-00bc-4872-9ce8-fe5e62f9b565",
         "loop": true
-      }
-    },
-    {
-      "id": "9fb64342-20eb-4eee-bb72-07ebfee26885",
-      "command": "EVENT_ACTOR_SET_MOVEMENT_SPEED",
-      "args": {
-        "actorId": "$self$",
-        "speed": 1,
-        "__collapse": false
       }
     }
   ],
@@ -120,6 +117,32 @@
         "magnitude": {
           "type": "number",
           "value": 5
+        }
+      }
+    },
+    {
+      "id": "90128491-1920-4812-b912-891029481920",
+      "command": "EVENT_SOUND_PLAY_EFFECT",
+      "args": {
+        "type": "crash",
+        "pitch": 3,
+        "frequency": 200,
+        "duration": 0.4,
+        "wait": false
+      }
+    },
+    {
+      "id": "19204812-9019-4812-b912-901928419019",
+      "command": "EVENT_ACTOR_SET_POSITION",
+      "args": {
+        "actorId": "player",
+        "x": {
+          "type": "number",
+          "value": 9
+        },
+        "y": {
+          "type": "number",
+          "value": 16
         }
       }
     }
@@ -150,5 +173,5 @@
       }
     }
   ],
-  "collisions": "0011ee+"
+  "collisions": "00168+"
 }
