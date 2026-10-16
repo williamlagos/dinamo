@@ -44,14 +44,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "f2decfe5-8d60-49b2-9e9c-86a1ce47dc40",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -68,14 +76,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "46fa0385-8185-4a57-b262-0781fa06eaf7",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -92,14 +108,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "5d2c9edb-5958-4ebe-9015-aa5cd1ce3e3d",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -116,14 +140,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "ea2c5e83-413b-46fa-b303-894aa938784e",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -140,7 +172,8 @@
           "value": 4
         },
         "moveType": "vertical",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
@@ -179,14 +212,22 @@
           "value": 4
         },
         "moveType": "vertical",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "40133298-ff18-4b46-bf23-6eed494415b0",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.3
+        "time": {
+          "type": "number",
+          "value": 0.3
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -203,7 +244,8 @@
           "value": -8
         },
         "moveType": "vertical",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     }
   ],

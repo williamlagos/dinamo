@@ -1,17 +1,17 @@
 # GBGame (GB Studio Retro Galaga Arcade Project)
 
-A complete, retro Game Boy and Analogue Pocket arcade shooter built for **GB Studio 4.1+**, inspired by the classic **Galaga** arcade experience and matching the Apple SpriteKit and Web PixiJS implementations in `dinamo`.
+A complete, retro Game Boy and Analogue Pocket arcade shooter built for **GB Studio 4.2.0+**, inspired by the classic **Galaga** arcade experience and matching the Apple SpriteKit and Web PixiJS implementations in `dinamo`.
 
 ![Game Boy](https://img.shields.io/badge/Platform-Nintendo%20Game%20Boy-black)
 ![Analogue Pocket](https://img.shields.io/badge/Pocket-Analogue%20Pocket%20(.pocket)-lightgrey)
-![GB Studio](https://img.shields.io/badge/Engine-GB%20Studio%204.1-green)
+![GB Studio](https://img.shields.io/badge/Engine-GB%20Studio%204.2.0-green)
 ![Genre](https://img.shields.io/badge/Genre-Retro%20Galaga%20Arcade-red)
 
 ---
 
 ## Overview
 
-This directory holds the complete, version-controlled **GB Studio 4.1** project source for **GBGame**:
+This directory holds the complete, version-controlled **GB Studio 4.2.0** project source for **GBGame**:
 - **`GBGame.gbsproj`:** The main GB Studio project definition file.
 - **`assets/`:** Original graphics, pixel art spritesheets (including vertical Galaga player fighter, enemy armada, and vertical energy lasers), background PNGs, chiptune music tracks (`.uge` / `.mod`), sound effects, and fonts.
 - **`project/`:** Scene graphs, actor behaviors, triggers, event scripts, color palettes, and global variables.
@@ -45,7 +45,7 @@ The project provides an authentic 8-bit vertical fixed-screen arcade shooter:
 
 ## How to Edit in GB Studio
 
-1. Ensure **GB Studio 4.1 or later** is installed (e.g. `/Applications/GB Studio.app`).
+1. Ensure **GB Studio 4.2.0 or later** is installed (e.g. `/Applications/GB Studio.app`).
 2. Open the project file:
    ```bash
    open gbgame/GBGame.gbsproj

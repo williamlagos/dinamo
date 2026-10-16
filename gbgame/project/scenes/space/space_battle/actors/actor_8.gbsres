@@ -44,14 +44,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "1baa4971-7f98-408f-a55f-e71aa34ad3a9",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -68,14 +76,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "ad7e9ee1-24fe-4790-bc9d-2e1692670900",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -92,14 +108,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "ad39ba53-c24b-44a3-b12b-c849b1ac0a30",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -116,14 +140,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "1f703747-a4e0-4616-914b-0dbafb558e3d",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -140,14 +172,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "daad1049-7862-4148-8026-0ca145e64242",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -164,14 +204,22 @@
           "value": 0
         },
         "moveType": "horizontal",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "e1305d39-c9af-43d9-afa0-e858f80a037d",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.4
+        "time": {
+          "type": "number",
+          "value": 0.4
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -188,7 +236,8 @@
           "value": 4
         },
         "moveType": "vertical",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
@@ -227,14 +276,22 @@
           "value": 4
         },
         "moveType": "vertical",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     },
     {
       "id": "fa64d30d-fd7f-4876-a32e-c7d5bbcee130",
       "command": "EVENT_WAIT",
       "args": {
-        "time": 0.3
+        "time": {
+          "type": "number",
+          "value": 0.3
+        },
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
       }
     },
     {
@@ -251,7 +308,8 @@
           "value": -8
         },
         "moveType": "vertical",
-        "useCollisions": false
+        "useCollisions": false,
+        "collideWith": []
       }
     }
   ],

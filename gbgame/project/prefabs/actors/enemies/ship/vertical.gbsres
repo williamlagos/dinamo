@@ -75,7 +75,8 @@
                 "value": -2
               },
               "moveType": "vertical",
-              "useCollisions": false
+              "useCollisions": false,
+              "collideWith": []
             },
             "children": {}
           },
@@ -93,7 +94,8 @@
                 "value": 2
               },
               "moveType": "vertical",
-              "useCollisions": false
+              "useCollisions": false,
+              "collideWith": []
             },
             "children": {}
           },
@@ -134,7 +136,8 @@
                 "value": 2
               },
               "moveType": "vertical",
-              "useCollisions": false
+              "useCollisions": false,
+              "collideWith": []
             },
             "children": {}
           },
@@ -152,7 +155,8 @@
                 "value": -2
               },
               "moveType": "vertical",
-              "useCollisions": false
+              "useCollisions": false,
+              "collideWith": []
             },
             "children": {}
           }
@@ -201,18 +205,27 @@
           {
             "id": "47117590-73e5-42cf-bd20-ae4f3faa896a",
             "command": "",
-            "children": {}
+            "children": {},
+            "args": {}
           },
           {
             "id": "e74fd49c-aeb4-49cc-91e0-aeb952574336",
             "command": "",
-            "children": {}
+            "children": {},
+            "args": {}
           },
           {
             "id": "05d0c4ff-d963-4bf8-8a7d-3a293c6f3633",
             "command": "EVENT_WAIT",
             "args": {
-              "time": 0.5
+              "time": {
+                "type": "number",
+                "value": 0.5
+              },
+              "frames": {
+                "type": "number",
+                "value": 30
+              }
             },
             "children": {}
           },

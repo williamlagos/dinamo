@@ -14,7 +14,7 @@ An arcade space shooter tribute to the iconic 1980s classic **Galaga**, engineer
 
 Dinamo recreates the quintessential retro arcade experience of Namco's 1981 classic *Galaga*:
 
-1. **Analogue Pocket & Game Boy (`gbgame/`):** Complete 8-bit retro Galaga arcade game editable in GB Studio 4.1 (`GBGame.gbsproj`). Features a dedicated 160×144 fixed-screen space battle with a 10-ship alien armada, formation swaying, dive-bombing attacks, vertical laser fire, and chiptune audio, compiling directly to `.pocket` and `.gb` ROMs.
+1. **Analogue Pocket & Game Boy (`gbgame/`):** Complete 8-bit retro Galaga arcade game editable in GB Studio 4.2.0 (`GBGame.gbsproj`). Features a dedicated 160×144 fixed-screen space battle with a 10-ship alien armada, formation swaying, dive-bombing attacks, vertical laser fire, and chiptune audio, compiling directly to `.pocket` and `.gb` ROMs.
 2. **[Apple (`apple/`)](https://github.com/williamlagos/dinamo-apple):** Native Swift + SpriteKit multiplatform project targeting macOS, iOS, and tvOS.
 3. **[Web (`web/`)](https://github.com/williamlagos/dinamo-web):** High-performance TypeScript + PixiJS 7 web game bundled with Vite.
 
@@ -47,7 +47,7 @@ dinamo/
  ├── web/      # Submodule: Dinamo for Web (PixiJS, TypeScript, Vite)
  │              ├── src/ (audio, textures, paths, game engine, main)
  │              └── dist/ (production build)
- ├── gbgame/   # GB Studio 4.1 Game Boy & Analogue Pocket Project (GBGame.gbsproj)
+ ├── gbgame/   # GB Studio 4.2.0 Game Boy & Analogue Pocket Project (GBGame.gbsproj)
  │              ├── assets/ (sprites, backgrounds, music, sounds)
  │              └── project/ (scenes including space/space_battle, scripts)
  └── shared/   # Shared Arcade wave & formation specifications (waves.json)
@@ -99,7 +99,7 @@ Select any target (`Dinamo macOS`, `Dinamo iOS`, or `Dinamo tvOS`) in Xcode and 
 ---
 
 ### 4. Editing the Game Boy / Analogue Pocket Version (GB Studio)
-Open the project file in GB Studio 4.1+:
+Open the project file in GB Studio 4.2.0+:
 ```bash
 open gbgame/GBGame.gbsproj
 ```
