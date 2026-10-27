@@ -1,0 +1,8 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gb_dmg_darkest">#FF081820</color>
+    <color name="gb_dmg_dark">#FF346856</color>
+    <color name="gb_dmg_light">#FF88C070</color>
+    <color name="gb_dmg_lightest">#FFE0F8D0</color>
+</resources>
