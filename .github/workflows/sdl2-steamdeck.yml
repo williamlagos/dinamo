@@ -1,0 +1,78 @@
+name: Build SDL2 (Steam Deck & EOS Runtime)
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - 'sdl2/**'
+      - 'shared/**'
+      - '.github/workflows/sdl2-steamdeck.yml'
+  pull_request:
+    branches: [master, main]
+    paths:
+      - 'sdl2/**'
+      - 'shared/**'
+
+jobs:
+  build-linux-sdl2:
+    name: Linux (${{ matrix.target_name }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - target_name: steamdeck-x86_64
+            os: ubuntu-latest
+            arch: x86_64
+          - target_name: eos-runtime-aarch64
+            os: ubuntu-24.04-arm
+            arch: aarch64
+
+    steps:
+      - name: Checkout dinamo
+        uses: actions/checkout@v4
+
+      - name: Install SDL2 and libpng build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build pkg-config libsdl2-dev libpng-dev
+
+      - name: Configure CMake
+        run: |
+          cmake -S sdl2 -B sdl2/build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build dinamo_sdl2 and smoke test
+        run: |
+          cmake --build sdl2/build
+
+      - name: Run smoke tests
+        run: |
+          ctest --test-dir sdl2/build --output-on-failure
+
+      - name: Package Steam Deck & EOS Runtime bundle
+        run: |
+          BUNDLE_DIR="dist/dinamo-${{ matrix.target_name }}"
+          mkdir -p "${BUNDLE_DIR}"
+          cp sdl2/build/dinamo_sdl2 "${BUNDLE_DIR}/"
+          cp -r shared "${BUNDLE_DIR}/"
+          cat << 'EOF' > "${BUNDLE_DIR}/launch-steamdeck.sh"
+          #!/usr/bin/env bash
+          set -euo pipefail
+          DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+          export DINAMO_SHARED_DIR="${DIR}/shared"
+          exec "${DIR}/dinamo_sdl2" --fullscreen "$@"
+          EOF
+          cat << 'EOF' > "${BUNDLE_DIR}/launch-eos-runtime.sh"
+          #!/usr/bin/env bash
+          set -euo pipefail
+          DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+          export DINAMO_SHARED_DIR="${DIR}/shared"
+          export SDL_VIDEODRIVER="${SDL_VIDEODRIVER:-kmsdrm}"
+          exec "${DIR}/dinamo_sdl2" --fullscreen "$@"
+          EOF
+          chmod +x "${BUNDLE_DIR}/launch-steamdeck.sh" "${BUNDLE_DIR}/launch-eos-runtime.sh"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dinamo-sdl2-${{ matrix.target_name }}
+          path: dist/dinamo-${{ matrix.target_name }}/
