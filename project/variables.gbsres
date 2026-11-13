@@ -92,6 +92,21 @@
       "symbol": "var_music_house_playing"
     },
     {
+      "id": "18",
+      "name": "Galaga Score",
+      "symbol": "var_galaga_score"
+    },
+    {
+      "id": "19",
+      "name": "Galaga Wave",
+      "symbol": "var_galaga_wave"
+    },
+    {
+      "id": "20",
+      "name": "Enemies Remaining",
+      "symbol": "var_enemies_remaining"
+    },
+    {
       "id": "871ea302-1cc1-463c-b9d7-530aac38fe81__L0",
       "name": "Spoken to gardener",
       "symbol": ""

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "40c0fd6d-9ebe-4a6e-8baf-2c478ec9c919",
+  "name": "space_arcade",
+  "symbol": "bg_space_arcade",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "space_arcade.png",
+  "tileColors": "",
+  "autoColor": false
+}

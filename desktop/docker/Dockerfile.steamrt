@@ -1,0 +1,21 @@
+# Cross-build dinamo-desktop against Valve's Steam Linux Runtime 3 ("Sniper")
+# Guarantees binary compatibility on Steam Deck (SteamOS) & Steam Linux hosts.
+#
+# Usage (from dinamo root):
+#   docker build --platform linux/amd64 -f desktop/docker/Dockerfile.steamrt -t dinamo-steamrt .
+#   docker run --rm -v "$PWD/desktop/dist:/out" dinamo-steamrt
+
+FROM registry.gitlab.steamos.cloud/steamrt/sniper/sdk:latest AS builder
+
+WORKDIR /src
+COPY shared /src/shared
+COPY desktop /src/desktop
+
+RUN cmake -S /src/desktop -B /build -DCMAKE_BUILD_TYPE=Release && \
+    cmake --build /build -j"$(nproc)" && \
+    ctest --test-dir /build --output-on-failure
+
+FROM debian:bookworm-slim AS exporter
+COPY --from=builder /build/dinamo-desktop /export/dinamo-desktop
+COPY --from=builder /build/assets /export/assets
+CMD ["sh", "-c", "mkdir -p /out/linux64 && cp -r /export/* /out/linux64/"]

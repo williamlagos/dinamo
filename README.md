@@ -1,35 +1,21 @@
 # Dinamo
 
-An authentic retro arcade and Game Boy space shooter tribute to the iconic 1980s classic **Galaga**, built for **Game Boy & Analogue Pocket** (GB Studio 4.2.0) alongside canonical retro sprites, palettes, and wave definitions.
+An authentic `160×144` retro **Game Boy**, **Analogue Pocket**, and **Steam Deck / Desktop** game project built on **GB Studio 4.2.0+** (`gbgame/`) paired with a native **C/C++ + SDL2 + SameBoy** desktop runner (`desktop/`).
 
 ![Game Boy](https://img.shields.io/badge/Game%20Boy-160x144-88c070)
-![Analogue Pocket](https://img.shields.io/badge/Analogue%20Pocket-GB%20Studio%204.2-blue)
+![Analogue Pocket](https://img.shields.io/badge/Analogue%20Pocket-GB%20Studio%204.2%2B-blue)
+![Steam Deck](https://img.shields.io/badge/Steam%20Deck-SDL2%20%2B%20SameBoy-1a9fff)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
 ## Overview
 
-`dinamo` serves as the core Game Boy / Analogue Pocket project and single source of retro assets & specifications:
+`dinamo` follows a **single-gameplay-codebase (Option A)** architecture—authoring the game once in GB Studio so it runs natively on **Game Boy**, **Analogue Pocket**, and **Steam Deck / PC**:
 
-1. **Game Boy & Analogue Pocket (`gbgame/`):** Complete 8-bit retro Galaga arcade shooter built in GB Studio 4.2.0 (`GBGame.gbsproj`). Features a fixed 160×144 space arena (`20×18` tiles), 10-ship alien armada, synchronous formation swaying, dive-bombing attacks, vertical laser fire, and chiptune audio, compiling directly to `.gb`, `.gbc`, and `.pocket` ROMs.
-2. **Shared Specifications & Assets (`shared/`):** Canonical sprite sheets (`shared/assets/gb/`), palette specifications (`shared/palettes.json`), and arcade wave configs (`shared/waves.json`) designed as the asset source of truth for the retro cartridge and future native SDL2 / Steam Deck builds.
-
----
-
-## Game Boy Look and Feel
-
-- **Native 160×144 Geometry:** Exact 10:9 aspect ratio (`20×18` tiles) centered cleanly without bezel clutter.
-- **Authentic 4-Color Palettes (`shared/palettes.json`):**
-  - **DMG (1989):** Dot-matrix pea-green monochrome LCD (`#e0f8d0`, `#88c070`, `#346856`, `#081820`).
-  - **POCKET (1996):** Film-compensated true monochrome FSTN LCD (`#ffffff`, `#aaaaaa`, `#555555`, `#000000`).
-  - **GBC (1998):** 4-color sprite banks on dark navy space backdrop.
-- **8-Bit Chiptune Audio Specs:** Pulse sweeps (Channels 1 & 2) and 7-bit / 15-bit LFSR noise bursts (Channel 4).
-- **10-Ship Tactical Armada:**
-  - 2 Boss Galaga command drones (top rank).
-  - 4 Red Escort butterflies (middle rank).
-  - 4 Blue Vanguard bees (bottom rank).
-  - Formation breathing, synchronized 2-frame animations, and dive-bombing attack swoops.
+1. **Canonical Game (`gbgame/`):** GB Studio project containing the existing Galaga space battle (`space/space_battle`) alongside `PLATFORM` / `caves/` / `parallax` foundations for the **Orbital Breach Micro-Metroidvania** (`docs/MICRO_METROIDVANIA.md`). Compiles to `.gb`, `.gbc`, and `.pocket` ROMs.
+2. **Desktop & Steam Deck Runner (`desktop/`):** Native C/C++ + `SDL2` + MIT-licensed **SameBoy** core executing the `.gb`/`.pocket` ROM cleanly without faux bezels (`160×144` integer-scaled `5×` → `800×720` centered on Steam Deck `1280×800`), `59.73 Hz` hardware pacing, real-time APU stereo audio, `SDL_GameController` support, `.sav` persistence, and optional `elements` / Steamworks hooks.
+3. **Shared Retro Specs & Assets (`shared/`):** Canonical `16×16` sprites (`shared/assets/gb/`), palette definitions (`shared/palettes.json` — DMG Pea Green, Pocket Monochrome, GBC), and wave configs (`shared/waves.json`).
 
 ---
 
@@ -37,37 +23,48 @@ An authentic retro arcade and Game Boy space shooter tribute to the iconic 1980s
 
 ```text
 dinamo/
- ├── gbgame/    # GB Studio 4.2.0 project (GBGame.gbsproj, scenes, sprites, .gb / .pocket export)
- └── shared/    # Canonical retro assets, palette specs, and wave patterns
-     ├── assets/gb/      # 16x16 vertical sprites & 160x144 starfield
-     ├── palettes.json   # DMG, Pocket, and GBC color & audio definitions
-     └── waves.json      # Wave patterns & formation slots
+ ├── gbgame/    # GB Studio 4.2.0+ project (GBGame.gbsproj, scenes, sprites, .gb / .pocket export)
+ ├── desktop/   # C/C++ + SDL2 + SameBoy runner for Steam Deck, Linux, macOS, Windows
+ ├── shared/    # Canonical retro assets, palettes.json, and wave specifications
+ └── docs/      # Micro-Metroidvania design & Option A architecture notes
 ```
 
 ---
 
 ## Companion Testbed Repositories (Unlinked)
 
-The Web, Apple, and Android ports have been unlinked from this repository so each can evolve into a platform-native game experience independently:
-
-- **[`dinamo-apple`](https://github.com/williamlagos/dinamo-apple):** Swift + SpriteKit fullscreen modern Apple Arcade testbed (macOS, iOS, tvOS).
+The Web, Apple, and Android codebases have been unlinked into independent testbed repositories:
+- **[`dinamo-apple`](https://github.com/williamlagos/dinamo-apple):** Swift + SpriteKit fullscreen Apple Arcade testbed (macOS, iOS, tvOS).
 - **[`dinamo-android`](https://github.com/williamlagos/dinamo-android):** Kotlin native touch-first portrait Android testbed.
-- **[`dinamo-web`](https://github.com/williamlagos/dinamo-web):** TypeScript + PixiJS 7 Web multiplayer showcase powered by [`elements-server`](https://github.com/williamlagos/elements-server).
+- **[`dinamo-web`](https://github.com/williamlagos/dinamo-web):** TypeScript + PixiJS 7 Web multiplayer showcase with [`elements-server`](https://github.com/williamlagos/elements-server).
 
 ---
 
 ## Quick Start
 
-### Clone
+### 1. Build & Test the Desktop / Steam Deck Runner (`desktop/`)
+Requires CMake 3.18+, a C11/C++17 compiler, and `SDL2`.
+
 ```bash
-git clone https://github.com/williamlagos/dinamo.git
-cd dinamo
+cmake -S desktop -B desktop/build -DCMAKE_BUILD_TYPE=Release
+cmake --build desktop/build -j
+ctest --test-dir desktop/build --output-on-failure
 ```
 
-### Edit & Build Game Boy / Analogue Pocket (`gbgame/`)
-Open the project in GB Studio 4.2.0+:
+Run a built ROM (e.g. exported from GB Studio into `gbgame/build/rom/`):
+```bash
+./desktop/build/dinamo-desktop gbgame/build/rom/game.gb
+```
+
+### 2. Cross-Build for Steam Deck (Steam Linux Runtime 3 "Sniper")
+```bash
+docker build --platform linux/amd64 -f desktop/docker/Dockerfile.steamrt -t dinamo-steamrt .
+docker run --rm -v "$PWD/desktop/dist:/out" dinamo-steamrt
+```
+
+### 3. Edit & Export ROMs in GB Studio (`gbgame/`)
 ```bash
 open gbgame/GBGame.gbsproj
 ```
-- Export as Game Boy ROM (`.gb` / `.gbc`) for original hardware and emulators.
-- Export as Analogue Pocket file (`.pocket`) to run natively on the Analogue Pocket.
+- Export as **Game Boy ROM** (`.gb` / `.gbc`) for real hardware and `dinamo-desktop`.
+- Export as **Analogue Pocket** (`.pocket`) for native Analogue Pocket play.

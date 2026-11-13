@@ -204,15 +204,21 @@
           },
           {
             "id": "47117590-73e5-42cf-bd20-ae4f3faa896a",
-            "command": "",
-            "children": {},
-            "args": {}
+            "command": "EVENT_ACTOR_SET_SPRITE",
+            "args": {
+              "actorId": "0",
+              "spriteSheetId": "493bdd1e-7e97-4911-b89a-c0677dfdcaaa"
+            },
+            "children": {}
           },
           {
             "id": "e74fd49c-aeb4-49cc-91e0-aeb952574336",
-            "command": "",
-            "children": {},
-            "args": {}
+            "command": "EVENT_ACTOR_SET_ANIMATE",
+            "args": {
+              "actorId": "0",
+              "animate": true
+            },
+            "children": {}
           },
           {
             "id": "05d0c4ff-d963-4bf8-8a7d-3a293c6f3633",

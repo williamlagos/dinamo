@@ -3,7 +3,7 @@
   "id": "a02c8ee7-1478-4317-80d7-1c3fc9704e8d",
   "name": "common/Init Weapons",
   "symbol": "script_init_weapons",
-  "description": "Attach bullets to A button for Shooter scenes",
+  "description": "Galaga Arcade Controls: A fires lasers UP, B fires dual rapid shot, Up/Down locked to bottom rank",
   "variables": {},
   "actors": {},
   "script": [
@@ -18,16 +18,29 @@
       "children": {
         "true": [
           {
+            "id": "c1f20109-7e45-42a1-a481-4ba7dc2bb189",
+            "command": "EVENT_SOUND_PLAY_EFFECT",
+            "args": {
+              "type": "beep",
+              "pitch": 4,
+              "frequency": 1400,
+              "duration": 0.08,
+              "wait": false
+            }
+          },
+          {
             "id": "b5d82058-ed83-492e-ad43-a011d637d9e2",
             "command": "EVENT_LAUNCH_PROJECTILE",
             "args": {
-              "spriteSheetId": "450a3571-cc76-41be-8c95-818d60b83c59",
+              "spriteSheetId": "ec0f660e-c420-43ee-9d1e-6d8e9f320213",
               "actorId": "player",
-              "direction": "right",
-              "speed": 3,
+              "direction": "up",
+              "speed": 4,
               "collisionGroup": "1",
               "collisionMask": [
-                "1"
+                "1",
+                "2",
+                "3"
               ],
               "__collapse": false,
               "animSpeed": 7,
@@ -41,6 +54,82 @@
             }
           }
         ]
+      },
+      "__type": "event"
+    },
+    {
+      "id": "836b2810-74bc-4185-b8ee-89a1ffcb2831",
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "b"
+        ]
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fa290812-32b0-4591-b352-87063d91ae10",
+            "command": "EVENT_SOUND_PLAY_EFFECT",
+            "args": {
+              "type": "tone",
+              "pitch": 5,
+              "frequency": 1800,
+              "duration": 0.1,
+              "wait": false
+            }
+          },
+          {
+            "id": "92dae610-85f2-4f51-b852-c98f8216d801",
+            "command": "EVENT_LAUNCH_PROJECTILE",
+            "args": {
+              "spriteSheetId": "ec0f660e-c420-43ee-9d1e-6d8e9f320213",
+              "actorId": "player",
+              "direction": "up",
+              "speed": 5,
+              "collisionGroup": "1",
+              "collisionMask": [
+                "1",
+                "2",
+                "3"
+              ],
+              "__collapse": false,
+              "animSpeed": 7,
+              "lifeTime": 1.2,
+              "directionType": "direction",
+              "angleVariable": "0",
+              "angle": 0,
+              "otherActorId": "$self$",
+              "loopAnim": true,
+              "destroyOnHit": true
+            }
+          }
+        ]
+      },
+      "__type": "event"
+    },
+    {
+      "id": "e2801481-9b11-482a-a532-61db7a052e41",
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "up"
+        ]
+      },
+      "children": {
+        "true": []
+      },
+      "__type": "event"
+    },
+    {
+      "id": "67412918-4b2a-4318-ba31-89d41f712952",
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "children": {
+        "true": []
       },
       "__type": "event"
     }

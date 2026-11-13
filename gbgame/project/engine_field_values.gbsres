@@ -7,7 +7,7 @@
     },
     {
       "id": "FEAT_PLATFORM_COYOTE_TIME",
-      "value": 0
+      "value": 1
     },
     {
       "id": "FEAT_PLATFORM_DROP_THROUGH",
